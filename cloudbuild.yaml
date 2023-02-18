@@ -1,13 +1,7 @@
 steps:
-# Install dependencies
-- name: node
-  entrypoint: yarn
-  args: ['install']
-# Run tests
-- name: node
-  entrypoint: yarn
-  args: ['test']
-# Run custom commands
-- name: node
-  entrypoint: yarn
-  args: ['run', 'build']
+  - name: gcr.io/cloud-builders/docker
+    args: [build, '-t', 'europe-west1-docker.pkg.dev/${PROJECT_ID}/master-build/build:latest', '.']
+images:
+  - 'europe-west1-docker.pkg.dev/${PROJECT_ID}/master-build/build:latest'
+options: 
+  logging: CLOUD_LOGGING_ONLY
