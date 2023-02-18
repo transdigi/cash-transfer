@@ -1,6 +1,6 @@
 steps:
   - name: gcr.io/cloud-builders/docker
-    args: [build, '-t', 'europe-west1-docker.pkg.dev/${PROJECT_ID}/master-build/build:latest', '.']
+    args: [yarn, '-t', 'europe-west1-docker.pkg.dev/${PROJECT_ID}/master-build/build:latest', '.']
 images:
   - 'europe-west1-docker.pkg.dev/${PROJECT_ID}/master-build/build:latest'
 options: 
